@@ -23,7 +23,7 @@ class Settings extends Component {
   matchesFilter (str) {
     if (!this.state.filterText) return true
     const filterText = this.state.filterText
-    return str.toLowerCase().indexOf(filterText.toLowerCase()) === -1
+    return str.toLowerCase().indexOf(filterText.toLowerCase()) !== -1
   }
 
   render () {
