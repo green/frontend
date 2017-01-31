@@ -1,0 +1,101 @@
+.StatusDetail {
+  padding: 15px;
+  font-size: 14px;
+  color: fade(#fff, 60%);
+
+  &__header {
+    color: fade(#000, 50%);
+    border-radius: 6px;
+    height: 106px;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 1s, box-shadow 1s;
+  }
+
+  &__subHeader {
+    color: fade(#000, 50%);
+    border-radius: 6px;
+    padding: 15px;
+    transition: background-color 1s, box-shadow 1s;
+    margin-top: 15px;
+    font-size: 18px;
+    text-align: center;
+    color: fade(#000, 50%);
+  }
+
+  &__bolt {
+    width: 82px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    color: #000;
+  }
+
+  &__logo {
+    width: 95px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+  }
+
+  &--dropbox &__logo {
+    width: 130px;
+  }
+
+  &__heading {
+    opacity: 0.5;
+    font-size: 13px;
+    color: fade(#fff, 50%);
+    text-transform: uppercase;
+    margin-top: 40px;
+    margin-bottom: 5px;
+  }
+
+  &__name {
+    font-size: 18px;
+    color: #fff;
+  }
+
+  // a
+  &__support {
+    display: block;
+    padding: 6px 0;
+    transition: color 0.3s;
+
+    &Icon {
+      display: inline-block;
+      vertical-align: middle;
+      width: 20px;
+      margin-right: 10px;
+    }
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+
+  // Status: Golden AF
+  &--1 &__header,
+  &--1 &__subHeader {
+    background-color: @palette-springGreen;
+    box-shadow: 0 3px 24px 0 fade(@palette-springGreen, 50%);
+  }
+
+  // State: Oh snap!
+  &--0 &__header,
+  &--0 &__subHeader {
+    color: fade(#fff, 85%);
+    background-color: @palette-pomegranate;
+    box-shadow: 0 3px 24px 0 fade(@palette-pomegranate, 50%);
+  }
+
+  // State: Warn
+  &--2 &__header,
+  &--2 &__subHeader {
+    background-color: @palette-mySin;
+    box-shadow: 0 3px 24px 0 fade(@palette-mySin, 50%);
+  }
+}

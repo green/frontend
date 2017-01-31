@@ -1,0 +1,35 @@
+
+.ServiceGrid {
+  @debug: false;
+  background-color: @palette-bunker;
+  font-size: 0;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    min-height: 100vh;
+    width: 0;
+  }
+
+  &__bd {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+  }
+
+  &__item {
+    display: inline-block;
+    width: 100%;
+    max-width: 205px;
+    vertical-align: middle;
+    font-size: 16px;
+    margin: 15px;
+
+    & when (@debug) {
+      outline: 1px solid red;
+    }
+  }
+}

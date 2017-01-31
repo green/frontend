@@ -1,0 +1,123 @@
+@import '../../ui/_/resetInput';
+@import '../../ui/_/fontInherit';
+@import '../../ui/_/placeholderColor';
+
+
+.Settings {
+  background-color: @palette-bunker;
+  color: fade(#fff, 50%);
+  min-height: 100vh; // @TODO
+  padding: 50px;
+
+
+
+  // input
+  &__filterContainer {
+    max-width: 500px;
+    margin: 30px auto;
+  }
+
+  &__filter {
+    .fontInherit();
+    .resetInput();
+    .placeholderColor(fade(#fff, 30%));
+    display: block;
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    border-bottom: 1px solid fade(#fff, 30%);
+    transform: translateZ(0);
+  }
+
+  &__options {
+    &::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+  }
+
+  &__option {
+    display: block;
+    padding: 5px 0;
+    float: left;
+    padding-right: 15px;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      width: 50%;
+    }
+    @media (min-width: 1024px) {
+      width: 33.33%;
+    }
+    @media (min-width: 1280px) {
+      width: 25%;
+    }
+
+
+    &Title {
+      color: fade(#fff, 95%);
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+
+    & + & {
+      border-top: 1px solid fade(#fff, 5%);
+    }
+  }
+
+  // label
+  &__field {
+    cursor: pointer;
+  }
+
+  &__toggle {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    width: 40px;
+    margin-right: 10px;
+
+    input {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      outline: none;
+      border: none;
+      border-radius: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0.5;
+    }
+
+    b {
+      display: block;
+      height: 24px;
+      position: relative;
+      background-color: lighten(@palette-ebonyClay, 5%);
+      border-radius: 12px;
+      transition: transform 0.2s, background-color 0.2s;
+
+      &::before {
+        content: '';
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        border-radius: 10px;
+        top: 2px;
+        left: 2px;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+        background-color: @palette-bunker;
+        transition: inherit;
+      }
+    }
+
+    input:checked + b {
+      background-color: @palette-springGreen;
+
+      &::before {
+        transform: translateX(15px);
+      }
+    }
+  }
+}

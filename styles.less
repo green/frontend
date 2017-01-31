@@ -1,0 +1,37 @@
+// Config: Palette
+// Because naming colours is hard, use http://chir.ag/projects/name-that-color, and DO NOT question it.
+@palette-bunker: #12161D;
+@palette-ebonyClay: #1D222F;
+@palette-springGreen: #00FF62;
+@palette-mySin: #FFBC24;
+@palette-pomegranate: #F83E1C;
+
+
+// Dependencies
+@import (css) './node_modules/normalize-css/normalize.css';
+
+// Base styles
+@import './ui/base/universal';
+@import './ui/base/html';
+@import './ui/base/body';
+@import './ui/base/h';
+@import './ui/base/a';
+@import './ui/base/img';
+@import './ui/base/lists';
+@import './ui/base/textarea';
+
+// Templates/Views
+@import './components/Home/Home';
+@import './components/Settings/Settings';
+
+
+@font-face {
+  font-family: 'K';
+  font-weight: normal;
+  src: url('./ui/fonts/Karla/Karla-Regular.ttf') format('truetype');
+}
+
+body {
+  .fontSmoothing(on);
+  font-family: 'K', sans-serif;
+}

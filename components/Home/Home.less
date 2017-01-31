@@ -1,0 +1,44 @@
+@import '../ServiceGrid/ServiceGrid';
+@import '../ServiceCard/ServiceCard';
+@import '../SettingsLink/SettingsLink';
+@import '../StatusDetail/StatusDetail';
+
+.Home {
+  &__sidebar {
+    position: fixed;
+    top: 0;
+    right: 100%;
+    bottom: 0;
+    width: 100%;
+    max-width: 285px;
+    color: #fff;
+    background-color: darken(@palette-ebonyClay, 3%);
+    box-shadow: 0 0 40px fade(#000, 80%);
+    transition: transform 0.3s;
+    z-index: 10;
+
+    &.is-active {
+      transform: translateX(100%);
+    }
+  }
+
+  &__screen {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: fade(#000, 15%);
+    z-index: 9;
+    cursor: w-resize;
+  }
+  &__message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    max-width: 450px;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+}
