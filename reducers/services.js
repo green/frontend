@@ -15,8 +15,10 @@ export default function services (state = {}, action) {
         if (state.services.find(({ id }) => id === action.data.id)) {
           const services = state.services.map((service) => {
             if (service.id === action.data.id) {
-              service.statusCode = action.data.statusCode
-              service.lastUpdated = action.data.lastUpdated
+              return {
+                ...service,
+                ...action.data
+              }
             }
             return service
           })
