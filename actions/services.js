@@ -1,5 +1,6 @@
 // @flow
 export const UPDATE_SERVICE_STATUS = 'UPDATE_SERVICE_STATUS'
+export const UPDATE_SERVICE_STATUS_BATCHED = 'BATCH_ACTIONS'
 export const POPULATE_SERVICES = 'POPULATE_SERVICES'
 export const OVERWRITE_SERVICES = 'OVERWRITE_SERVICES'
 export const UPDATE_SERVICE_SUBSCRIPTION = 'UPDATE_SERVICE_SUBSCRIPTION'
@@ -9,6 +10,13 @@ export function updateServiceStatus (data: Object) {
   return {
     type: UPDATE_SERVICE_STATUS,
     data
+  }
+}
+
+export function updateServicesStatus (...services) {
+  return {
+    type: UPDATE_SERVICE_STATUS_BATCHED,
+    actions: services.map(updateServiceStatus)
   }
 }
 
