@@ -5,6 +5,9 @@
   "main": "index.js",
   "license": "MIT",
   "author": "Green (https://github.com/green)",
+  "maintainers": [
+    "Josh Gillies <npm@josh.gl> (http://josh.gl)"
+  ],
   "repository": "git@github.com:green/frontend.git",
   "scripts": {
     "example": "budo ./example/index.js:bundle.js --title Green.af",
