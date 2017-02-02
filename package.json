@@ -1,7 +1,7 @@
 {
   "name": "green-frontend",
   "description": "Reusable frontend for powering beautiful dashboards. (originally developed for http://green.af)",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "index.js",
   "license": "MIT",
   "author": "Green (https://github.com/green)",
